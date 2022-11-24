@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-//import 'package:test_flutter/screen/display.dart';
+import 'package:test_flutter/screen/display.dart';
 import 'package:test_flutter/screen/formscreen.dart';
+import 'package:test_flutter/screen/page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,10 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         body: TabBarView(
-          children: [FormScreen(), Container()],
+          children: [FormScreen(), DisplayScreen(), PageScreen()],
         ),
         backgroundColor: Colors.blue,
         bottomNavigationBar: TabBar(
@@ -51,7 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Tab(
               text: "รายชื่อนักเรียน",
-            )
+            ),
+            Tab(
+              text: "Page",
+            ),
           ],
         ),
       ),
